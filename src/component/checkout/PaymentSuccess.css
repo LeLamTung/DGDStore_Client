@@ -1,0 +1,56 @@
+.payment-status {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 80px;
+    color: #555;
+  }
+  
+  .payment-success {
+    max-width: 600px;
+    margin: 100px auto;
+    background-color: #f9fff9;
+    border: 2px solid #c4f0c5;
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 150, 0, 0.1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .payment-success h2 {
+    color: #2e7d32;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-success p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .payment-success strong {
+    color: #2e7d32;
+  }
+  .payment-success-container {
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .payment-info {
+    margin-top: 20px;
+    background: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+  }
+  .payment-info p {
+    font-size: 20px;
+  }
+  .error {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
