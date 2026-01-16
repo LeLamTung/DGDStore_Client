@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 import toast from "react-hot-toast";
-
+const API_URL = import.meta.env.VITE_APP_API_URL;
 const useCartStore = create((set) => ({
   cart: [],
   action: {
@@ -9,7 +9,7 @@ const useCartStore = create((set) => ({
     fetchCart: async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/client/cart/ListItem",
+          `${API_URL}/api/client/cart/ListItem`,
           { withCredentials: true }
         );
         const cart = response.data.data|| []; // Đảm bảo data trả về đúng định dạng
@@ -27,7 +27,7 @@ const useCartStore = create((set) => ({
       try {
         console.log("Adding product to cart:", product);
         await axios.post(
-          "http://localhost:5000/api/client/cart/addtoCart",
+          `${API_URL}/api/client/cart/addtoCart`,
           {
             productId: product.idProduct, // Đảm bảo rằng productId là đúng
             quantity: 1,
@@ -47,7 +47,7 @@ const useCartStore = create((set) => ({
       try {
         // Giả sử có API để xóa sản phẩm khỏi giỏ
         await axios.delete(
-          `http://localhost:5000/api/client/cart/remove/${productId}`,
+          `${API_URL}/api/client/cart/remove/${productId}`,
           { withCredentials: true }
         );
         // Sau khi xóa thì refetch lại cart
@@ -61,7 +61,7 @@ const useCartStore = create((set) => ({
       try {
         // Giả sử có API để cập nhật số lượng sản phẩm
         await axios.put(
-          "http://localhost:5000/api/client/cart/updateQuantity",
+          `${API_URL}/api/client/cart/updateQuantity`,
           { productId, quantity },
           { withCredentials: true }
         );

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./PaymentSuccess.css";
 import axios from "axios";
 import { useCartActions } from "../../store/Store";
-
+const API_URL = import.meta.env.VITE_APP_API_URL;
 function PaymentSuccess() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ function PaymentSuccess() {
 
       try {
           const localRes = await axios.get(
-          `http://localhost:5000/api/client/momo-status`,
+          `${API_URL}/api/client/momo-status`,
           { params: { orderId } } // ✅ gửi ?orderId=MOMOxxxx
         );
 
@@ -43,7 +43,7 @@ function PaymentSuccess() {
 
         // 🧩 2️⃣ Nếu chưa có đơn hàng trong DB → kiểm tra trực tiếp MoMo
         const momoRes = await axios.post(
-          "http://localhost:5000/api/client/transaction-status",
+          `${API_URL}/api/client/transaction-status`,
           { orderId }
         );
 

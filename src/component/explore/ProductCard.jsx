@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useCartActions } from "../../store/Store";
 import "./ProductCard.css";
-
+const API_URL = import.meta.env.VITE_APP_API_URL;
 function ProductCard({ product: productData }) {
   const { addToCart } = useCartActions();
 
@@ -51,7 +51,7 @@ function ProductCard({ product: productData }) {
       <Link to={`/product/${idProduct}`}>
         <div className="product-card_img">
           <img
-            src={`http://localhost:5000/uploads/${ImageName}`}
+            src={`${ImageName}`}
             alt={ProductName}
           />
         </div>

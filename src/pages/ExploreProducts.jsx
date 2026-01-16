@@ -15,7 +15,7 @@ function ExploreProduct() {
   const [checkBoxState, setCheckBoxState] = useState({});
   const [searchKeyword, setSearchKeyword] = useState("");
   const { category } = useParams();
-
+  const API_URL = import.meta.env.VITE_APP_API_URL;
   // Thêm state cho phân trang
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(8);
@@ -23,7 +23,7 @@ function ExploreProduct() {
     async function fetchData() {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/client/product/list"
+          `${API_URL}/api/client/product/list`
         );
         if (res.data.cod === 200) {
           const allProducts = res.data.data;

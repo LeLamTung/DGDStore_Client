@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SelectCategory.css";
-
+const Login_URL = import.meta.env.VITE_APP_URL;
 function SelectCategory({ categories, checkBoxState, handleCheckBox }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,7 +29,7 @@ function SelectCategory({ categories, checkBoxState, handleCheckBox }) {
         <button
           className="auth-buttons"
           onClick={() =>
-            (window.location.href = "http://localhost:3000/auth/signin")
+            (window.location.href = `${Login_URL}/auth/signin`)
           }
         >
           Login
@@ -37,12 +37,12 @@ function SelectCategory({ categories, checkBoxState, handleCheckBox }) {
         <button
           className="auth-buttons"
           onClick={() =>
-            (window.location.href = "http://localhost:3000/auth/signup")
+            (window.location.href = `${Login_URL}/auth/signup`)
           }
         >
           Register
         </button>
-        <button className="auth-buttons" onClick={()=>(window.location.href = "http://localhost:3000/auth/logout")}>Logout</button>
+        <button className="auth-buttons" onClick={()=>(window.location.href = `${Login_URL}/auth/logout`)}>Logout</button>
       </div>
     </div>
   );

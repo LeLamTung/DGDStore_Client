@@ -75,7 +75,7 @@ function CartProducts({ product, addProductQuantity, removeFromCart }) {
   return (
     <div className="cart-product">
       <img
-        src={`http://localhost:5000/uploads/${product.ImageName}`}
+        src={`${product.ImageName}`}
         alt={product.ProductName}
       />
       <div className="cart-product_info">

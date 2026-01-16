@@ -56,7 +56,7 @@ function ProductView({ productData }) {
         {sortedImages.length > 0 ? (
           <>
             <img
-              src={`http://localhost:5000/uploads/${sortedImages[currentImageIndex].ImageLink}`}
+              src={`${sortedImages[currentImageIndex].ImageLink}`}
               alt={ProductName}
             />
             {sortedImages.length > 1 && (
@@ -68,7 +68,7 @@ function ProductView({ productData }) {
           </>
         ) : (
           <img
-            src={`http://localhost:5000/uploads/${ImageName}`}
+            src={`${ImageName}`}
             alt={ProductName}
           />
         )}

@@ -4,7 +4,7 @@ import "./UserInfo.css";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const API_URL = import.meta.env.VITE_APP_API_URL;
 function UserInfo() {
   const { emptyCart } = useCartActions();
   const cart = useCart();
@@ -66,7 +66,7 @@ function UserInfo() {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post("http://localhost:5000/api/client/order/Checkout", {
+      const response = await axios.post(`${API_URL}/api/client/order/Checkout`, {
         CustomerName: `${form.firstName} ${form.lastName}`,
         PhoneNumber: form.phone,
         Address: `${form.city} ${form.address}`,
