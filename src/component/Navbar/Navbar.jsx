@@ -5,7 +5,7 @@ import { ShoppingCart } from "phosphor-react";
 import SlidingCart from "./SlidingCart";
 import axios from "axios"; // Thêm thư viện axios để gọi API
 import "./Navbar.css";
-
+const API_URL = import.meta.env.VITE_APP_API_URL;
 function Navbar() {
   const [showCart, setShowCart] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -15,7 +15,7 @@ function Navbar() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/client/category/list"); // API endpoint của bạn
+        const response = await axios.get(`${API_URL}/api/client/category/list`); // API endpoint của bạn
         const data = response.data.data; // Lấy dữ liệu từ key 'data'
 
         // Kiểm tra nếu dữ liệu trả về là mảng, nếu không gán mặc định là mảng trống
